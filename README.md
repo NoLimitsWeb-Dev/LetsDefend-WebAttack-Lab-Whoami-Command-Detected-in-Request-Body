@@ -176,6 +176,27 @@ The image provides absolute, definitive proof that the operating system shell ex
 <img width="1894" height="843" alt="image" src="https://github.com/user-attachments/assets/1beb6d76-83b4-45a6-b3ca-a5682c00db63" />
 
 * **Confirm Containment:** Select Yes or check the box indicating that the host has been successfully isolated.
+
+---
+
+### 1. Artifact 1:
+	
+ • Value: 61.177.172.87
+	
+ • Type: IP
+	
+ • Comment: Attacker source IP address executing command injection payloads.
+
+### 2. Artifact 2:
+	
+ • Value: /video/?c=whoami
+	
+ • Type: URL
+	
+ • Comment: Vulnerable web application endpoint targeted by the attacker.
+
+<img width="982" height="566" alt="image" src="https://github.com/user-attachments/assets/8c4c175b-2709-471b-ba50-88b8370edee5" />
+
 ---
 
 <img width="1001" height="588" alt="image" src="https://github.com/user-attachments/assets/a26ac062-1eb6-4728-95f2-a0c6197e69f7" />
