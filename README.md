@@ -179,6 +179,18 @@ The image provides absolute, definitive proof that the operating system shell ex
 
 ---
 
+<img width="986" height="667" alt="image" src="https://github.com/user-attachments/assets/ee620e6c-3bab-45b3-a2c0-8ae3f01f1e32" />
+
+Select Yes on your screen.
+
+Why This Is Correct
+
+• The Attack Succeeded: The playbook guidelines explicitly state to escalate "...in cases where the attack succeeds."
+
+• Proven Compromise: Our earlier investigation of the terminal history and HTTP 200 logs conclusively proved that the external attacker successfully ran administrative commands (whoami, cat /etc/shadow) as root on WebServer1004.
+
+---
+
 ### 1. Artifact 1:
 	
  • Value: 61.177.172.87
