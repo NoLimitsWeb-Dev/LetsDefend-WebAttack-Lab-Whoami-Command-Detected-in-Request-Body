@@ -177,3 +177,29 @@ The image provides absolute, definitive proof that the operating system shell ex
 
 * **Confirm Containment:** Select Yes or check the box indicating that the host has been successfully isolated.
 ---
+
+<img width="1001" height="588" alt="image" src="https://github.com/user-attachments/assets/a26ac062-1eb6-4728-95f2-a0c6197e69f7" />
+
+```
+Incident Summary:
+The SOC team detected a successful Command Injection attack targeting WebServer1004 (172.16.17.16) at the path /video/. The attack originated from an external public IP address (61.177.172.87), which threat intelligence resources (VirusTotal and AbuseIPDB) confirm has a highly malicious reputation and a history of active web exploits.
+Investigation & Impact:
+Analysis of the incoming HTTP POST request logs revealed that the attacker appended unauthorized system commands (whoami, uname, ls, cat /etc/passwd, and cat /etc/shadow) inside the request parameters. Examination of the endpoint’s Terminal History confirmed that the target server successfully executed these commands in a high-privilege system context (root) and returned an HTTP 200 response containing the output of sensitive files back to the threat actor.
+Mitigation & Action Taken:
+• Flagged the incident as a True Positive.
+• Successfully isolated WebServer1004 via Endpoint Security control panels to prevent further lateral movement or additional data exfiltration.
+• Logged relevant Indicators of Compromise (IoCs).
+• Escalated the ticket to Tier 2 for full system remediation, forensic log cleanup, and mandatory credential rotations.
+```
+
+---
+
+<img width="1002" height="462" alt="image" src="https://github.com/user-attachments/assets/f6895016-1899-40f9-88c9-64a895500b1f" />
+
+* Select True Positive on your screen
+* Click the blue **Confirm & Close** button to submit your final results.
+
+### Core Verdict Reasons
+
+• Malicious Commands: The external attacker deliberately embedded dangerous operating system shell commands (whoami, cat /etc/shadow) inside the web request body parameters.
+• Successful Compromise: The web server completely executed the code payloads under root administrative privileges and exposed sensitive password hashes back to the internet.
