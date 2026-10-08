@@ -230,3 +230,7 @@ Mitigation & Action Taken:
 • Successful Compromise: The web server completely executed the code payloads under root administrative privileges and exposed sensitive password hashes back to the internet.
 
 ---
+
+<img width="1903" height="881" alt="image" src="https://github.com/user-attachments/assets/e27b5880-8243-4b76-bb35-d413a24084de" />
+
+---
