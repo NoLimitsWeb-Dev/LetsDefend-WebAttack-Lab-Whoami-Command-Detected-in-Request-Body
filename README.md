@@ -119,3 +119,56 @@ The presence of cat /etc/passwd (and its companion payload cat /etc/shadow) in t
 In your log management context, seeing that the server successfully printed the output of these commands back to the attacker confirms two critical findings:
 1. System Reconnaissance: The attacker didn't just test if command injection worked (using whoami); they actively began harvesting internal data to fully take over the server.
 2. Root Privilege Confirmation: Because the web application successfully read out these system files, it proves that your underlying web service was running with high-level administrative system permissions (root privileges). This misconfiguration allowed the attacker complete command execution access.
+
+---
+
+<img width="1006" height="423" alt="image" src="https://github.com/user-attachments/assets/c97e20e4-31e4-40da-9463-8d4c6679a01a" />
+
+Based on our clear findings—the VirusTotal and AbuseIPDB reputation reports, alongside the concrete evidence of OS commands like whoami and cat /etc/shadow being passed in the POST parameter payload—this traffic represents a highly dangerous web application exploit.
+
+---
+
+<img width="1005" height="422" alt="image" src="https://github.com/user-attachments/assets/1941e269-4b7a-419a-9112-1901df38e84a" />
+
+• The Evidence: In this case, the web application directly executed operating system terminal commands passed into the web parameter, such as whoami, uname, and cat /etc/shadow, returning the backend server's terminal outputs right back to the attacker.
+
+---
+
+<img width="987" height="588" alt="image" src="https://github.com/user-attachments/assets/38b46e50-f349-4ae9-a82d-238f50d5765a" />
+
+• Malicious External Source: The attack originates from an external IP (61.177.172.87) with an extensively documented history of hostile web exploits, rather than an authorized internal simulation platform or designated corporate penetration testing subnet.
+
+---
+• No Internal Authorization: There are no internal mailbox alerts or authorized change tickets scheduled for this time frame on the LetsDefend platform.
+
+<img width="1504" height="689" alt="image" src="https://github.com/user-attachments/assets/61988fde-604a-4938-89d8-c496f5782332" />
+
+---
+
+<img width="1000" height="436" alt="image" src="https://github.com/user-attachments/assets/4436d136-c4a5-4fa0-b653-43dd8a4ff193" />
+
+• Source: The attack originates from an external, public IP address (61.177.172.87) hosted on the Internet.
+• Destination: The traffic targets an internal private IP address (172.16.17.16) belonging to your Company Network.
+
+---
+
+<img width="974" height="780" alt="image" src="https://github.com/user-attachments/assets/f3016f7e-97ee-4866-b22d-0d6b95f44481" />
+<img width="1866" height="882" alt="image" src="https://github.com/user-attachments/assets/545d6224-afc0-4cd5-bb31-7de4d28049e4" />
+
+The image above shows the Terminal History logs for WebServer1004 (IP: 172.16.17.16) inside the Endpoint Security panel.
+The image provides absolute, definitive proof that the operating system shell executed the injected payloads. The listed command-line entries match the exact timestamps and request patterns found in your malicious network traffic logs.
+
+### Analysis of the Terminal Logs
+
+• System Discovery: The commands ls, whoami, and uname were directly run by the system on 28.02.2022 between 04:11 and 04:13.
+
+• Data Exfiltration: The highly sensitive system files cat /etc/passwd and cat /etc/shadow were successfully run in the shell right after at 04:14 and 04:17.
+
+• Verdict: Because these commands are logged as having executed inside the machine's backend command history, the asset is fully compromised.
+
+• HTTP 200 OK Response: The web server processed the commands and successfully returned the text output of these sensitive administrative files back to the external attacker.
+
+<img width="994" height="362" alt="image" src="https://github.com/user-attachments/assets/36458d52-6667-40ca-8730-a692f5df2214" />
+
+---
+
