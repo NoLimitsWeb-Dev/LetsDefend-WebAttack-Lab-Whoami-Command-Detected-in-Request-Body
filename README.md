@@ -197,9 +197,15 @@ Mitigation & Action Taken:
 <img width="1002" height="462" alt="image" src="https://github.com/user-attachments/assets/f6895016-1899-40f9-88c9-64a895500b1f" />
 
 * Select True Positive on your screen
+
 * Click the blue **Confirm & Close** button to submit your final results.
+
+---
 
 ### Core Verdict Reasons
 
 • Malicious Commands: The external attacker deliberately embedded dangerous operating system shell commands (whoami, cat /etc/shadow) inside the web request body parameters.
+
 • Successful Compromise: The web server completely executed the code payloads under root administrative privileges and exposed sensitive password hashes back to the internet.
+
+---
