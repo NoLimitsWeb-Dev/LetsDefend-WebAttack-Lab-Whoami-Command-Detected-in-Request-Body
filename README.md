@@ -172,3 +172,8 @@ The image provides absolute, definitive proof that the operating system shell ex
 
 ---
 
+<img width="982" height="684" alt="image" src="https://github.com/user-attachments/assets/fe8be981-fac9-43e4-b772-58a12a8f969a" />
+<img width="1894" height="843" alt="image" src="https://github.com/user-attachments/assets/1beb6d76-83b4-45a6-b3ca-a5682c00db63" />
+
+* **Confirm Containment:** Select Yes or check the box indicating that the host has been successfully isolated.
+---
